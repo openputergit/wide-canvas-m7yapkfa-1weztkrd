@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaraasta Tales | Wedding Photography & Cinematography</title>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+    .playfair {
+        font-family: 'Playfair Display', serif;
+    }
+    .poppins {
+        font-family: 'Poppins', sans-serif;
+    }
+    .hero-overlay {
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    }
+    .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .fade-in {
+        animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .gallery-img {
+        transition: all 0.3s ease;
+    }
+    .gallery-img:hover {
+        transform: scale(1.05);
+    }
+    .testimonial-card {
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(5px);
+    }
+</style>
+</head>
+<body class="bg-stone-50 poppins">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl playfair font-bold text-stone-800">Aaraasta Tales</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#portfolio" class="text-stone-600 hover:text-stone-900">Portfolio</a>
+                <a href="#story" class="text-stone-600 hover:text-stone-900">Our Story</a>
+                <a href="#services" class="text-stone-600 hover:text-stone-900">Services</a>
+                <a href="#contact" class="text-stone-600 hover:text-stone-900">Contact</a>
+            </div>
+            <button class="md:hidden" onclick="toggleMenu()">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#portfolio" class="text-xl" onclick="toggleMenu()">Portfolio</a>
+            <a href="#story" class="text-xl" onclick="toggleMenu()">Our Story</a>
+            <a href="#services" class="text-xl" onclick="toggleMenu()">Services</a>
+            <a href="#contact" class="text-xl" onclick="toggleMenu()">Contact</a>
+            <button onclick="toggleMenu()" class="absolute top-6 right-6">
+                <i class="bi bi-x-lg text-2xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen">
+        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-walking-together-after-their-wedding-ceremony-23342-large.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 hero-overlay flex items-center justify-center text-center">
+            <div data-aos="fade-up" class="text-white px-4">
+                <h1 class="playfair text-4xl md:text-6xl font-bold mb-4">Adorning Your Moments,<br>Framing Your Stories</h1>
+                <p class="text-lg md:text-xl mb-8">Cinematic Wedding Photography & Films in Kashmir</p>
+                <a href="#contact" class="bg-white text-stone-900 px-8 py-3 rounded-full hover:bg-stone-100 transition">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-20 px-6">
+        <div class="container mx-auto" data-aos="fade-up">
+            <h2 class="playfair text-4xl text-center mb-12">Our Portfolio</h2>
+            <div class="flex justify-center mb-8 space-x-4">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-stone-900 text-white" data-filter="all">All</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-stone-100" data-filter="photo">Photography</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-stone-100" data-filter="video">Cinematography</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 portfolio-grid">
+                <div class="gallery-img photo">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866" alt="Wedding Photo" class="w-full h-80 object-cover rounded-lg">
+                </div>
+                <!-- Add more portfolio items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="story" class="py-20 px-6 bg-stone-100">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a" alt="Behind the scenes" class="rounded-lg shadow-lg">
+            </div>
+            <div data-aos="fade-left">
+                <h2 class="playfair text-4xl mb-6">Our Story</h2>
+                <p class="text-stone-600 leading-relaxed mb-6">
+                    Based in the heart of Kashmir, Aaraasta Tales was born from a passion for capturing love stories in their most authentic form. We believe every wedding is a unique narrative waiting to be told through our lens.
+                </p>
+                <p class="text-stone-600 leading-relaxed">
+                    With years of experience and an eye for detail, we transform fleeting moments into timeless memories that you'll cherish forever.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="playfair text-4xl text-center mb-12" data-aos="fade-up">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-camera text-4xl text-stone-800"></i>
+                    <h3 class="playfair text-2xl mt-4 mb-3">Photography</h3>
+                    <p class="text-stone-600">Capturing candid emotions and staged portraits with artistic excellence.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-film text-4xl text-stone-800"></i>
+                    <h3 class="playfair text-2xl mt-4 mb-3">Cinematography</h3>
+                    <p class="text-stone-600">Cinematic wedding films that tell your unique love story.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bi bi-book text-4xl text-stone-800"></i>
+                    <h3 class="playfair text-2xl mt-4 mb-3">Premium Albums</h3>
+                    <p class="text-stone-600">Handcrafted albums that preserve your memories in style.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-6 bg-stone-100">
+        <div class="container mx-auto">
+            <h2 class="playfair text-4xl text-center mb-12" data-aos="fade-up">Love Notes</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="testimonial-card p-8 rounded-lg shadow-lg" data-aos="fade-up">
+                    <p class="italic mb-4">"Aaraasta Tales captured our wedding day perfectly. The photos and video exceeded our expectations!"</p>
+                    <p class="font-semibold">- Sarah & James</p>
+                </div>
+                <div class="testimonial-card p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <p class="italic mb-4">"Professional, creative, and incredibly talented. They made us feel so comfortable throughout the day."</p>
+                    <p class="font-semibold">- Priya & Rahul</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="playfair text-4xl text-center mb-12" data-aos="fade-up">Get in Touch</h2>
+            <form class="space-y-6" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Your Name" class="w-full p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-stone-500">
+                    <input type="email" placeholder="Your Email" class="w-full p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-stone-500">
+                </div>
+                <input type="text" placeholder="Event Date" class="w-full p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-stone-500">
+                <textarea placeholder="Tell us about your special day" rows="4" class="w-full p-3 border border-stone-300 rounded-lg focus:outline-none focus:border-stone-500"></textarea>
+                <button type="submit" class="w-full bg-stone-900 text-white py-3 rounded-lg hover:bg-stone-800 transition">Send Message</button>
+            </form>
+            <div class="text-center mt-8">
+                <a href="https://wa.me/1234567890" class="inline-flex items-center text-stone-600 hover:text-stone-900">
+                    <i class="bi bi-whatsapp mr-2"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-white py-12 px-6">
+        <div class="container mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="playfair text-2xl mb-4">Aaraasta Tales</h3>
+                <p class="text-stone-400">Crafting timeless memories through the art of photography and cinematography.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Contact</h4>
+                <p class="text-stone-400">Email: hello@aaraastales.com</p>
+                <p class="text-stone-400">Phone: +91 123 456 7890</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-stone-400 hover:text-white"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-stone-400 hover:text-white"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-stone-400 hover:text-white"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+    // Mobile Menu Toggle
+    window.toggleMenu = function() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    };
+
+    // Portfolio Filter
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(b => {
+                b.classList.remove('bg-stone-900', 'text-white');
+                b.classList.add('bg-stone-100', 'text-stone-900');
+            });
+            
+            // Add active class to clicked button
+            btn.classList.remove('bg-stone-100', 'text-stone-900');
+            btn.classList.add('bg-stone-900', 'text-white');
+            
+            const filter = btn.getAttribute('data-filter');
+            const items = document.querySelectorAll('.portfolio-grid .gallery-img');
+            
+            items.forEach(item => {
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Form Submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for your inquiry! We will get back to you soon.');
+        form.reset();
+    });
+});
+</script>
+
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
